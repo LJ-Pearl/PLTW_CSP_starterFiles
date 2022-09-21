@@ -16,16 +16,24 @@ for s in turtle_shapes:
 #  
 startx = 0
 starty = 0
+turtle_angle = 0
 
 #
 for t in my_turtles:
+  new_color = turtle_colors.pop()
+  t.fillcolor(new_color)
+  t.pencolor(new_color)
+  t.penup()
   t.goto(startx, starty)
-  t.right(45)     
+  t.pendown()
+  t.right(turtle_angle)     
   t.forward(50)
 
 #	
-  startx = startx + 50
-  starty = starty + 50
+
+  turtle_angle = turtle_angle + 45
+  startx = t.xcor()
+  starty = t.ycor()
 
 wn = trtl.Screen()
 wn.mainloop()
